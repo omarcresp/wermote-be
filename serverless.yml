@@ -11,6 +11,15 @@ provider:
     subnetIds:
       - subnet-01777e64df2646809
       - subnet-0cdb69d55506e5793
+  resourcePolicy:
+    - Effect: Allow
+      Principal: "*"
+      Action: execute-api:Invoke
+      Resource:
+        - execute-api:/*/*/*
+      Condition:
+        IpAddress:
+          aws:SourceIp: 186.154.35.201
   runtime: nodejs18.x
   memorySize: 128
   timeout: 10
