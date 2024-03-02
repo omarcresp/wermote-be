@@ -18,6 +18,6 @@ jobs:
       - name: Install Deps
         run: npm i
       - name: Imprimir Variables
-        run: echo ${{ secrets.SERVERLESS_ACCESS_KEY }}
+        run: echo ${{ secrets.STAGE }}
       - name: Deploy
         run: npm run deploy
