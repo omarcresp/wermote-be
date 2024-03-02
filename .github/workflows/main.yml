@@ -17,7 +17,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install Deps
         run: npm i
-      - name: Imprimir Variables
-        run: echo ${{ secrets.STAGE }}
       - name: Deploy
-        run: npm run deploy
+        run: npm run deploy -- --stage ${{ vars.STAGE }}
