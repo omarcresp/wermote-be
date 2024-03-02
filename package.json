@@ -1,0 +1,18 @@
+{
+  "name": "wermote-be",
+  "author": "wermote",
+  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "sls offline",
+    "deploy": "sls deploy"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.2.0"
+  },
+  "devDependencies": {
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.3.3"
+  }
+}

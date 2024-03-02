@@ -1,0 +1,35 @@
+org: jackcres
+app: wermote-be
+service: wermote-be
+useDotenv: true
+
+provider:
+  name: aws
+  vpc:
+    securityGroupIds:
+      - sg-0c187263d8baa6588
+    subnetIds:
+      - subnet-01777e64df2646809
+      - subnet-0cdb69d55506e5793
+  runtime: nodejs18.x
+  memorySize: 128
+  timeout: 10
+  stage: dev
+  region: us-east-1
+  environment:
+    MONGO_URL: ${env:MONGO_URL}
+
+functions:
+  test:
+    handler: src/api/hello.handler
+    events:
+      - http:
+          path: test
+          method: get
+          cors: false
+custom:
+  serverless-offline:
+    httpPort: 4000
+
+plugins:
+- serverless-offline
